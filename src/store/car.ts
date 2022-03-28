@@ -13,6 +13,8 @@ export default class CarsModule extends VuexModule {
   @getter
   public cars: CarLibraryItem[] = [];
   @getter
+  public selectedCars: CarLibraryItem[] = [];
+  @getter
   public carsTotal = 0;
 
   @action
@@ -28,7 +30,13 @@ export default class CarsModule extends VuexModule {
   }
 
   @mutation
+  setSelectedCars(cars: CarLibraryItem[]): void {
+    this.selectedCars = cars;
+  }
+
+  @mutation
   setTotal(total: number): void {
     this.carsTotal = total;
   }
+
 }

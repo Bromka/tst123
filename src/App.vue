@@ -1,9 +1,9 @@
 <template>
   <n-message-provider>
-   <appBar>
-     asdasdasd
-   </appBar>
-    <router-view />
+    <div class="container">
+      <router-view />
+    </div>
+
   </n-message-provider>
 </template>
 
@@ -45,6 +45,9 @@ export default defineComponent({
   .block {
     max-width: 200px;
   }
+}
+.container {
+  margin: 1rem 1rem 2rem 1rem;
 }
 
 

@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import {START_LIMIT, START_PAGE} from "../assets/consts";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -7,22 +8,23 @@ const router = createRouter({
       path: "/",
       redirect: {
         path: "/list",
-        query: {
-          limit: 20,
-          skip: 0,
-        }
       }
     },
     {
       path: "/list",
       name: "CarsList",
-      component: () => import("../pages/list.vue"),
+      component: () => import("../pages/ListCar.vue"),
     },
     {
       path: "/car:id",
       name: "Single",
-      component: () => import("../pages/single.vue"),
-    }
+      component: () => import("../pages/SingleCar.vue"),
+    },
+    {
+      path: "/compare",
+      name: "CompareCars",
+      component: () => import("../pages/CompareCars.vue"),
+    },
   ]
 });
 
